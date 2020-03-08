@@ -18,19 +18,26 @@ from django.conf import settings
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, email, password=None, **extra_fields):
-        """Create new user account"""
+    def _create_user(self, email,  password, **extra_fields):
+        """
+        Create and save a user with the given username, email, and password.
+        """
         if not email:
             raise ValueError('User must have an email address')
-        user = self.model(email=self.normalize_email(email), **extra_fields)
+        email = self.normalize_email(email)
+        user = self.model(email=email,  **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
-
         return user
 
-    def create_superuser(self, email, password):
+    def create_user(self, email,  password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', False)
+        extra_fields.setdefault('is_superuser', False)
+        return self._create_user(email,  password, **extra_fields)
+
+    def create_superuser(self, email,  password):
         """Create super user"""
-        user = self.create_user(email, password)
+        user = self.create_user(email, password=password)
         user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)
@@ -41,7 +48,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     """Custom user model with email login"""
     email = models.EmailField(max_length=255, unique=True)
-    username = models.CharField(max_length=255)
+    username = models.CharField(max_length=255, blank=True)
     first_name = models.CharField(max_length=255, blank=True)
     last_name = models.CharField(max_length=255, blank=True)
     is_active = models.BooleanField(default=True)

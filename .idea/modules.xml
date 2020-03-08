@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../course/github/django_blog/.idea/django_blog.iml" filepath="$PROJECT_DIR$/../../../course/github/django_blog/.idea/django_blog.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/osp_portal.iml" filepath="$PROJECT_DIR$/.idea/osp_portal.iml" />
+      <module fileurl="file://$USER_HOME$/Envs/ospenv/.idea/ospenv.iml" filepath="$USER_HOME$/Envs/ospenv/.idea/ospenv.iml" />
     </modules>
   </component>
 </project>
