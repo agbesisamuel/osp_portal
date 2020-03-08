@@ -1,15 +1,16 @@
 import random, os
 from django.db import models
-#from django.contrib.auth.models import User
+from django.utils import timezone
 from core.models import User
 from PIL import Image
 
 
-#Get file extention
+# Get file extention
 def get_filename_ext(filepath):
     base_name = os.path.basename(filepath)
     name, ext = os.path.splitext(base_name)
     return name, ext
+
 
 def upload_image_path(instance, filename):
     new_filename = random.randint(1,9999999999)
@@ -18,6 +19,13 @@ def upload_image_path(instance, filename):
 
     return "profil_pics/{new_filename}".format(
             new_filename=new_filename, final_filename=final_filename)
+
+
+class Country(models.Model):
+    country_name = models.CharField(max_length=15, default='Ghana')
+
+    def __str__(self):
+        return self.country_name
 
 
 class Profile(models.Model):
@@ -29,12 +37,13 @@ class Profile(models.Model):
 
     bio = models.TextField(blank=True)
     phone_number = models.CharField(max_length=20, blank=True, null=True, verbose_name="Phone Number")
-    address = models.CharField(max_length=100, blank=False, null=False)
+    address = models.TextField(max_length=100, blank=False, null=False)
     city = models.CharField(max_length=100, blank=False, null=False, verbose_name="City")
+    # country = models.ForeignKey(Country, on_delete=models.CASCADE)
     country = models.CharField(max_length=100, blank=False, null=False, verbose_name="Country")
     loc_lat = models.CharField(max_length=20, blank=False, null=False, verbose_name="Latitude")
     loc_lng = models.CharField(max_length=20, blank=False, null=False, verbose_name="Longitude")
-
+    date_joined = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -50,4 +59,3 @@ class Profile(models.Model):
             output_size = (300,300)
             img.thumbnail(output_size)
             img.save(self.image.path)
-

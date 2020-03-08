@@ -1,6 +1,6 @@
 import uuid
 import os
-
+from django.db.models.signals import pre_save
 from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
@@ -56,4 +56,13 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     objects = UserManager()
     USERNAME_FIELD = 'email'
+
+
+def user_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.username:
+        instance.username = instance.email.split('@')[0].upper()
+
+
+pre_save.connect(user_pre_save_receiver, sender=User)
+
 

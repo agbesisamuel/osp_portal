@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb393bbc-3ce6-4ff7-99b5-7cbd6290d8ea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/osp_portal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/osp_portal.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../course/github/django_blog/django_project/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../course/github/django_blog/django_project/users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ospportal/core/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ospportal/core/migrations/0002_auto_20200301_1830.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ospportal/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ospportal/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ospportal/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ospportal/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ospportal/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ospportal/users/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ospportal/users/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ospportal/users/migrations/0002_auto_20200301_1830.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ospportal/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ospportal/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ospportal/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ospportal/users/templates/users/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +28,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Envs/ospenv" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ospportal/services" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
